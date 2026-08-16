@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Code Ninja · DSA Tutor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bot-avatar-symbol" viewBox="0 0 40 40">
+    <circle class="bot-antenna-dot" cx="20" cy="4" r="2.2" fill="var(--accent-strong, #d97757)"/>
+    <line x1="20" y1="6" x2="20" y2="10" stroke="currentColor" stroke-width="1.8"/>
+    <rect x="6" y="10" width="28" height="22" rx="8" fill="currentColor"/>
+    <ellipse class="bot-eye" cx="15" cy="21" rx="2.6" ry="3.2" fill="var(--panel)"/>
+    <ellipse class="bot-eye" cx="25" cy="21" rx="2.6" ry="3.2" fill="var(--panel)"/>
+    <path d="M15 26.5 Q20 29.5 25 26.5" stroke="var(--panel)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <rect x="2" y="17" width="3" height="7" rx="1.5" fill="currentColor"/>
+    <rect x="35" y="17" width="3" height="7" rx="1.5" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="app-header">
+  <div class="brand">
+    <div class="brand-icon">
+  
+      <svg class="bot-face" viewBox="0 0 40 40" width="26" height="26">
+        <use href="#bot-avatar-symbol"></use>
+      </svg>
+</div>
+    <div class="brand-text">
+      <div class="brand-title">
+        Code Ninja
+        <span class="badge badge-outline">DSA TUTOR</span>
+        <span class="badge-check" title="Verified assistant">✓</span>
+      </div>
+      <div class="brand-subtitle">Personal Interactive Instructor</div>
+    </div>
+  </div>
+
+  <div class="header-controls">
+    <div class="welcome-pill">
+      <span class="welcome-icon">👤</span>
+      Welcome, <strong id="user-name">Coder</strong>
+      <button id="edit-name-btn" class="link-btn">Edit</button>
+    </div>
+
+    <div class="lang-switch" id="lang-switch">
+      <button class="lang-btn active" data-lang="python">Python</button>
+      <button class="lang-btn" data-lang="cpp">C++</button>
+      <button class="lang-btn" data-lang="java">Java</button>
+    </div>
+
+    <button id="theme-toggle" class="icon-btn" title="Toggle day / night mode">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <button id="reset-btn" class="icon-btn" title="Reset session (new chat, default settings)">↺</button>
+  </div>
+</header>
+
+<div class="app-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-tabs">
+      <button class="tab-btn active" data-tab="syllabus">📖 Syllabus</button>
+      <button class="tab-btn" data-tab="history">🕘 Revision</button>
+      <button class="tab-btn" data-tab="notebook">📓 Notebook</button>
+      
+    </div>
+
+    <section class="tab-panel active" id="tab-syllabus">
+      <div class="panel-heading">
+        <span id="preset-count">6 Presets Available</span>
+        <span class="badge badge-active">Active</span>
+      </div>
+      <div class="preset-list" id="preset-list"><!-- injected by script.js --></div>
+    </section>
+
+    <section class="tab-panel" id="tab-revision">
+      <div class="panel-heading"><span>Topics you've covered</span></div>
+      <div class="revision-list" id="revision-list">
+        <p class="empty-hint">Topics you ask about will show up here for quick revision.</p>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-notebook">
+      <div class="panel-heading"><span>Your scratchpad</span></div>
+      <textarea id="notebook-area" class="notebook-area"
+        placeholder="Jot down patterns, gotchas, or things to revisit... (saved automatically)"></textarea>
+    </section>
+
+    <section class="tab-panel" id="tab-history">
+      <div class="panel-heading"><span>Past conversations</span></div>
+      <div class="history-list" id="history-list"><!-- injected by script.js --></div>
+    </section>
+  </aside>
+
+  <main class="chat-area">
+    <div class="chat-header">
+      <div class="chat-title">
+        <span class="live-dot"></span>
+        <div>
+          <div class="chat-title-main" id="chat-title">New Conversation</div>
+          <div class="chat-title-sub">Interactive Algorithm Coaching</div>
+        </div>
+      </div>
+      <button id="new-chat-btn" class="primary-btn">+ New Chat</button>
+    </div>
+
+    <div class="messages" id="messages"><!-- injected by script.js --></div>
+
+    <div class="composer">
+      <div class="quick-prompts" id="quick-prompts">
+        <span class="quick-label">QUICK PROMPTS:</span>
+        <button class="quick-btn" data-prompt="Explain how to do a complexity analysis (time and space) for an algorithm, with an example.">Complexity Analysis</button>
+        <button class="quick-btn" data-prompt="Explain the recursive tree method for analyzing recursive algorithms, with an example.">Recursive Tree</button>
+        <button class="quick-btn" data-prompt="Explain how to design an optimal hashmap-based solution for a two-sum style problem.">Optimal Hashmaps</button>
+      </div>
+      <form id="chat-form" class="input-row">
+        <input
+          id="chat-input"
+          type="text"
+          autocomplete="off"
+          placeholder="Ask Code Ninja a DSA question..."
+        />
+        <button type="submit" class="send-btn" id="send-btn" title="Send">➤</button>
+      </form>
+    </div>
+
+    <footer class="app-footer">CODE NINJA · INTERACTIVE DSA TUTOR</footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
